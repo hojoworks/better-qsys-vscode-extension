@@ -1,0 +1,7 @@
+*.js
+out
+node_modules
+.vscode-test/
+*.vsix
+*.notes.md
+README.notes.md
