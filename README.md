@@ -59,7 +59,7 @@ Autocomplete for accessing control values at runtime:
 - `.Position` - Read/Write position from 0.0 to 1.0
 - `.EventHandler` - Assign function called when control value changes
 
-Example usage: `Controls.MyButton.Value = 1` or `Controls.MyButton.EventHandler = function(ctl) ... end`
+Example usage: `Controls.MyButton.Value = 1` or `Controls.MyButton.EventHandler = function() ... end`
 
 ### Single Property Completions (39 properties)
 
