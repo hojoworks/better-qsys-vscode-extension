@@ -33,7 +33,7 @@ export function createControlCompletions(): vscode.CompletionItem[] {
 	// Text Control
 	const textControl = new vscode.CompletionItem('Control Text', vscode.CompletionItemKind.Snippet);
 	textControl.insertText = new vscode.SnippetString(
-		'table.insert(controls, {\n\tName = "${1:textName}",\n\tControlType = "Text",\n\tCount = ${2:1},\n\tUserPin = ${3|true,false|}\n})'
+		'table.insert(controls, {\n\tName = "${1:textName}",\n\tControlType = "Text",\n\tCount = ${2:1},\n\tUserPin = ${3|true,false|},\n\tPinStyle = "${4|Input,Output,Both,None|}"\n})'
 	);
 	textControl.documentation = new vscode.MarkdownString('Insert a Text control definition');
 	textControl.detail = 'Text Control';

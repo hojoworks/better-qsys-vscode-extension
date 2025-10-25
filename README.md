@@ -4,7 +4,7 @@ A VS Code extension providing intelligent autocomplete and IntelliSense for Q-SY
 
 ## Features
 
-This extension provides autocomplete support for Q-SYS plugin design-time functions and properties.
+This extension provides autocomplete support for Q-SYS plugin design-time functions and properties based on the [Q-SYS Developer Documentation](https://q-syshelp.qsc.com/DeveloperHelp/Content/Standards_Definitions/Reserved_Functions.htm).
 
 ### Supported File Types
 - `.lua` files
@@ -25,7 +25,7 @@ Type `control` to see all options:
 - `control button` - Button control with ButtonType, Count, UserPin, PinStyle
 - `control indicator` - Indicator control with IndicatorType, Count, UserPin, PinStyle
 - `control knob` - Knob control with ControlUnit, Min, Max, Count, UserPin, PinStyle
-- `control text` - Text control with Count, UserPin
+- `control text` - Text control with Count, UserPin, PinStyle
 
 ### Layout Completions (11 types)
 Type `layout` to see all options:
@@ -52,25 +52,91 @@ Type `graphics` to see all options:
 ### Single Property Completions (39 properties)
 Autocomplete for individual layout and graphics properties:
 
-BackgroundColor, ButtonStyle, ButtonVisualStyle, ClassName, Color, CornerRadius, CustomButtonDown, CustomButtonUp, Fill, Font, FontSize, FontStyle, HTextAlign, IconColor, Image, IsBold, IsReadOnly, Legend, Margin, MeterStyle, OffColor, Padding, Position, PrettyName, Radius, ShowTextbox, Size, StrokeColor, StrokeWidth, Style, Text, TextBoxStyle, TextColor, Type, UnlinkOffColor, VTextAlign, WordWrap, ZOrder
+- BackgroundColor
+- ButtonStyle
+- ButtonVisualStyle
+- ClassName
+- Color
+- CornerRadius
+- CustomButtonDown
+- CustomButtonUp
+- Fill
+- Font
+- FontSize
+- FontStyle
+- HTextAlign
+- IconColor
+- Image
+- IsBold
+- IsReadOnly
+- Legend
+- Margin
+- MeterStyle
+- OffColor
+- Padding
+- Position
+- PrettyName
+- Radius
+- ShowTextbox
+- Size
+- StrokeColor
+- StrokeWidth
+- Style
+- Text
+- TextBoxStyle
+- TextColor
+- Type
+- UnlinkOffColor
+- VTextAlign
+- WordWrap
+- ZOrder
 
 #### Font Support
-- 11 fonts: Adamina, Droid Sans, Lato, Montserrat, Noto Serif, Open Sans, Poppins, Roboto, Roboto Mono, Roboto Slab, Slabo 27px
-- 18 font styles: Regular, Bold, Light, Light Italic, Italic, Bold Italic, Black, Black Italic, Thin, Thin Italic, ExtraLight, ExtraLight Italic, Medium, Medium Italic, SemiBold, SemiBold Italic, ExtraBold, ExtraBold Italic
+
+11 available fonts:
+
+- Adamina
+- Droid Sans
+- Lato
+- Montserrat
+- Noto Serif
+- Open Sans
+- Poppins
+- Roboto
+- Roboto Mono
+- Roboto Slab
+- Slabo 27px
+
+18 available font styles:
+
+- Regular
+- Bold
+- Light
+- Light Italic
+- Italic
+- Bold Italic
+- Black
+- Black Italic
+- Thin
+- Thin Italic
+- ExtraLight
+- ExtraLight Italic
+- Medium
+- Medium Italic
+- SemiBold
+- SemiBold Italic
+- ExtraBold
+- ExtraBold Italic
 
 ## Installation
 
 ### From .vsix file
+
 1. Download the latest `.vsix` file
 2. In VS Code, go to Extensions (Ctrl+Shift+X)
 3. Click the "..." menu at the top
 4. Select "Install from VSIX..."
 5. Choose the downloaded `.vsix` file
-
-### For Development
-1. Clone this repository
-2. Run `npm install` to install dependencies
-3. Press `F5` to launch in Extension Development Host
 
 ## Usage
 
@@ -84,15 +150,6 @@ BackgroundColor, ButtonStyle, ButtonVisualStyle, ClassName, Color, CornerRadius,
 3. Select from the autocomplete dropdown
 4. Use Tab to move through placeholders
 5. Choose from dropdown options where available
-
-## Building from Source
-
-```bash
-npm install              # Install dependencies
-npm run compile         # Compile TypeScript
-npm run watch           # Watch for changes (development)
-npm run package         # Create .vsix package
-```
 
 ## Repository
 
