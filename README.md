@@ -49,7 +49,20 @@ Type `graphics` to see all options:
 - `graphics label` - Label graphic
 - `graphics svg` - SVG graphic with base64 Image property
 
+### Runtime Control Properties (5 properties)
+
+Autocomplete for accessing control values at runtime:
+
+- `.Value` - Read/Write floating point value
+- `.String` - Read/Write string representation
+- `.Boolean` - Read/Write boolean value (true if position > 0.5)
+- `.Position` - Read/Write position from 0.0 to 1.0
+- `.EventHandler` - Assign function called when control value changes
+
+Example usage: `Controls.MyButton.Value = 1` or `Controls.MyButton.EventHandler = function(ctl) ... end`
+
 ### Single Property Completions (39 properties)
+
 Autocomplete for individual layout and graphics properties:
 
 - BackgroundColor

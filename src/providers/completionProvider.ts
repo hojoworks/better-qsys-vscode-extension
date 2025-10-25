@@ -4,6 +4,7 @@ import { createControlCompletions } from '../completions/controls';
 import { createLayoutCompletions } from '../completions/layouts';
 import { createGraphicsCompletions } from '../completions/graphics';
 import { createCommonValueCompletions } from '../completions/common';
+import { createRuntimeCompletions } from '../completions/runtime';
 
 export function provideCompletionItems(
 	document: vscode.TextDocument,
@@ -28,6 +29,9 @@ export function provideCompletionItems(
 
 	// Common Values
 	completionItems.push(...createCommonValueCompletions());
+
+	// Runtime Control Properties
+	completionItems.push(...createRuntimeCompletions());
 
 	return completionItems;
 }
