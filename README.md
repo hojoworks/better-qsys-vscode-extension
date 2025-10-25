@@ -14,6 +14,7 @@ This extension provides autocomplete support for Q-SYS plugin design-time functi
 ### Property Completions (5 types)
 
 Type `property` to see all options:
+
 - `property string` - String property with Name, Type, Value
 - `property integer` - Integer property with Name, Type, Min, Max, Value
 - `property double` - Double property with Name, Type, Min, Max, Value
