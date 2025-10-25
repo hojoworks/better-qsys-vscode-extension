@@ -7,10 +7,12 @@ A VS Code extension providing intelligent autocomplete and IntelliSense for Q-SY
 This extension provides autocomplete support for Q-SYS plugin design-time functions and properties based on the [Q-SYS Developer Documentation](https://q-syshelp.qsc.com/DeveloperHelp/Content/Standards_Definitions/Reserved_Functions.htm).
 
 ### Supported File Types
+
 - `.lua` files
 - `.qplug` files
 
 ### Property Completions (5 types)
+
 Type `property` to see all options:
 - `property string` - String property with Name, Type, Value
 - `property integer` - Integer property with Name, Type, Min, Max, Value
@@ -21,14 +23,18 @@ Type `property` to see all options:
 All properties include optional commented Header and Comment fields.
 
 ### Control Completions (4 types)
+
 Type `control` to see all options:
+
 - `control button` - Button control with ButtonType, Count, UserPin, PinStyle
 - `control indicator` - Indicator control with IndicatorType, Count, UserPin, PinStyle
 - `control knob` - Knob control with ControlUnit, Min, Max, Count, UserPin, PinStyle
 - `control text` - Text control with Count, UserPin, PinStyle
 
 ### Layout Completions (11 types)
+
 Type `layout` to see all options:
+
 - `layout button` - Button layout with PrettyName, Style, ButtonStyle, Position, Size
 - `layout combobox` - ComboBox layout
 - `layout fader` - Fader layout with ShowTextbox option
@@ -42,7 +48,9 @@ Type `layout` to see all options:
 - `layout text` - Text layout
 
 ### Graphics Completions (5 types)
+
 Type `graphics` to see all options:
+
 - `graphics groupbox` - GroupBox graphic
 - `graphics header` - Header graphic
 - `graphics image` - Image graphic with base64 Image property
@@ -168,10 +176,7 @@ Autocomplete for individual layout and graphics properties:
 
 https://github.com/hojoworks/better-qsys-vscode-extension
 
-## License
-
-MIT
-3. Update `package.json` to change the language file extensions or add more features
+1. Update `package.json` to change the language file extensions or add more features
 
 ## Contributing
 
