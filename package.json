@@ -2,8 +2,8 @@
   "name": "qsys-intellisense",
   "displayName": "Better Lua for Q-SYS Plugins",
   "description": "IntelliSense and autocomplete support for QSYS Lua plugin development",
-  "version": "0.0.1",
-  "publisher": "qsys-dev",
+  "version": "1.0.0",
+  "publisher": "integratorblocks",
   "repository": {
     "type": "git",
     "url": "https://github.com/hojoworks/better-qsys-vscode-extension"
@@ -32,7 +32,8 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "package": "vsce package"
+    "package": "npx @vscode/vsce package",
+    "publish": "npx @vscode/vsce publish"
   },
   "devDependencies": {
     "@types/node": "18.x",
