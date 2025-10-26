@@ -3,40 +3,47 @@ import * as vscode from 'vscode';
 export function createRuntimeCompletions(): vscode.CompletionItem[] {
 	const completions: vscode.CompletionItem[] = [];
 
-	// .Value property
-	const valueCompletion = new vscode.CompletionItem('.Value', vscode.CompletionItemKind.Property);
-	valueCompletion.insertText = new vscode.SnippetString('Value');
-	valueCompletion.documentation = new vscode.MarkdownString('Read/Write floating point value of control. Boolean values are converted to 0 (false) or 1 (true).');
-	valueCompletion.detail = 'Control Value Property';
-	completions.push(valueCompletion);
+	// Runtime Value
+	const runtimeValueCompletion = new vscode.CompletionItem('Runtime value', vscode.CompletionItemKind.Snippet);
+	runtimeValueCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].Value");
+	runtimeValueCompletion.documentation = new vscode.MarkdownString('Read/Write floating point value of control. Boolean values are converted to 0 (false) or 1 (true).');
+	runtimeValueCompletion.detail = 'Control Runtime Value';
+	completions.push(runtimeValueCompletion);
 
-	// .String property
-	const stringCompletion = new vscode.CompletionItem('.String', vscode.CompletionItemKind.Property);
-	stringCompletion.insertText = new vscode.SnippetString('String');
-	stringCompletion.documentation = new vscode.MarkdownString('Read/Write string representation of control value');
-	stringCompletion.detail = 'Control String Property';
-	completions.push(stringCompletion);
+	// Runtime String
+	const runtimeStringCompletion = new vscode.CompletionItem('Runtime string', vscode.CompletionItemKind.Snippet);
+	runtimeStringCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].String");
+	runtimeStringCompletion.documentation = new vscode.MarkdownString('Read/Write string representation of control value');
+	runtimeStringCompletion.detail = 'Control Runtime String';
+	completions.push(runtimeStringCompletion);
 
-	// .Boolean property
-	const booleanCompletion = new vscode.CompletionItem('.Boolean', vscode.CompletionItemKind.Property);
-	booleanCompletion.insertText = new vscode.SnippetString('Boolean');
-	booleanCompletion.documentation = new vscode.MarkdownString('Read/Write boolean value. Returns true if position > 0.5');
-	booleanCompletion.detail = 'Control Boolean Property';
-	completions.push(booleanCompletion);
+	// Runtime Boolean
+	const runtimeBooleanCompletion = new vscode.CompletionItem('Runtime boolean', vscode.CompletionItemKind.Snippet);
+	runtimeBooleanCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].Boolean");
+	runtimeBooleanCompletion.documentation = new vscode.MarkdownString('Read/Write boolean value. Returns true if position > 0.5');
+	runtimeBooleanCompletion.detail = 'Control Runtime Boolean';
+	completions.push(runtimeBooleanCompletion);
 
-	// .Position property
-	const positionCompletion = new vscode.CompletionItem('.Position', vscode.CompletionItemKind.Property);
-	positionCompletion.insertText = new vscode.SnippetString('Position');
-	positionCompletion.documentation = new vscode.MarkdownString('Read/Write floating point position which goes from 0.0 to 1.0');
-	positionCompletion.detail = 'Control Position Property';
-	completions.push(positionCompletion);
+	// Runtime Position
+	const runtimePositionCompletion = new vscode.CompletionItem('Runtime position', vscode.CompletionItemKind.Snippet);
+	runtimePositionCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].Position");
+	runtimePositionCompletion.documentation = new vscode.MarkdownString('Read/Write floating point position which goes from 0.0 to 1.0');
+	runtimePositionCompletion.detail = 'Control Runtime Position';
+	completions.push(runtimePositionCompletion);
 
-	// .EventHandler property
-	const eventHandlerCompletion = new vscode.CompletionItem('.EventHandler', vscode.CompletionItemKind.Property);
-	eventHandlerCompletion.insertText = new vscode.SnippetString('EventHandler = function()\n\t${1:-- Handle control change}\nend');
-	eventHandlerCompletion.documentation = new vscode.MarkdownString('Assign a function to be called when the control value changes. Function can optionally receive the control object as parameter.');
-	eventHandlerCompletion.detail = 'Control EventHandler';
-	completions.push(eventHandlerCompletion);
+	// Runtime EventHandler (function reference)
+	const runtimeEventHandlerRefCompletion = new vscode.CompletionItem('Runtime eventhandler function', vscode.CompletionItemKind.Snippet);
+	runtimeEventHandlerRefCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].EventHandler = ${2:functionName}");
+	runtimeEventHandlerRefCompletion.documentation = new vscode.MarkdownString('Assign a function reference to be called when the control value changes.');
+	runtimeEventHandlerRefCompletion.detail = 'Control Runtime EventHandler (Function Reference)';
+	completions.push(runtimeEventHandlerRefCompletion);
+
+	// Runtime EventHandler (inline function)
+	const runtimeEventHandlerInlineCompletion = new vscode.CompletionItem('Runtime eventhandler inline', vscode.CompletionItemKind.Snippet);
+	runtimeEventHandlerInlineCompletion.insertText = new vscode.SnippetString("Controls['${1:controlName}'].EventHandler = function()\n\t${2}\nend");
+	runtimeEventHandlerInlineCompletion.documentation = new vscode.MarkdownString('Assign an inline function to be called when the control value changes. Add a parameter like (ctl) if you need access to the control object.');
+	runtimeEventHandlerInlineCompletion.detail = 'Control Runtime EventHandler (Inline Function)';
+	completions.push(runtimeEventHandlerInlineCompletion);
 
 	return completions;
 }

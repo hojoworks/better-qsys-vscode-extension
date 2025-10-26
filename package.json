@@ -2,8 +2,9 @@
   "name": "qsys-intellisense",
   "displayName": "Better Lua for Q-SYS Plugins",
   "description": "IntelliSense and autocomplete support for QSYS Lua plugin development",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "integratorblocks",
+  "icon": "images/qsyslogo256.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/hojoworks/better-qsys-vscode-extension"

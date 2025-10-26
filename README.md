@@ -58,17 +58,26 @@ Type `graphics` to see all options:
 - `graphics label` - Label graphic
 - `graphics svg` - SVG graphic with base64 Image property
 
-### Runtime Control Properties (5 properties)
+### Runtime Control Properties (6 completions)
 
-Autocomplete for accessing control values at runtime:
+Type `runtime` to see all options for accessing controls at runtime:
 
-- `.Value` - Read/Write floating point value
-- `.String` - Read/Write string representation
-- `.Boolean` - Read/Write boolean value (true if position > 0.5)
-- `.Position` - Read/Write position from 0.0 to 1.0
-- `.EventHandler` - Assign function called when control value changes
+- `runtime value` - Controls['controlName'].Value (Read/Write floating point)
+- `runtime string` - Controls['controlName'].String (Read/Write string representation)
+- `runtime boolean` - Controls['controlName'].Boolean (Read/Write boolean, true if position > 0.5)
+- `runtime position` - Controls['controlName'].Position (Read/Write position from 0.0 to 1.0)
+- `runtime eventhandler function` - Assign a function reference to EventHandler
+- `runtime eventhandler inline` - Assign an inline function to EventHandler
 
-Example usage: `Controls.MyButton.Value = 1` or `Controls.MyButton.EventHandler = function() ... end`
+Example usage:
+
+```lua
+Controls['MyButton'].Value = 1
+Controls['Volume'].EventHandler = VolumeChanged
+Controls['Mute'].EventHandler = function()
+    -- Handle control change
+end
+```
 
 ### Single Property Completions (39 properties)
 
