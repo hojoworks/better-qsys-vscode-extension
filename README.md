@@ -175,7 +175,7 @@ Autocomplete for individual layout and graphics properties:
 
 ## Repository
 
-https://github.com/hojoworks/better-qsys-vscode-extension
+[Repository](https://github.com/hojoworks/better-qsys-vscode-extension)
 
 1. Update `package.json` to change the language file extensions or add more features
 
