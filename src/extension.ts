@@ -16,6 +16,24 @@ export function activate(context: vscode.ExtensionContext) {
 		{ scheme: 'file', pattern: '**/*.qplug' }
 	];
 
+	// Register command to open Q-SYS documentation
+	const openDocsCommand = vscode.commands.registerCommand('qsys-intellisense.openDocumentation', () => {
+		const docUrl = 'https://q-syshelp.qsc.com/DeveloperHelp/Content/Standards_Definitions/Reserved_Functions.htm';
+		vscode.env.openExternal(vscode.Uri.parse(docUrl));
+		vscode.window.showInformationMessage('Opening Q-SYS Reserved Functions Documentation...');
+	});
+
+	context.subscriptions.push(openDocsCommand);
+
+	// Register command to open Q-SYS Lua Extensions documentation
+	const openLuaExtensionsCommand = vscode.commands.registerCommand('qsys-intellisense.openLuaExtensions', () => {
+		const docUrl = 'https://help.qsys.com/q-sys_9.4/Index.htm#Control_Scripting/Using_Lua_in_Q-Sys/Q-SYS_Extensions_to_Lua.htm';
+		vscode.env.openExternal(vscode.Uri.parse(docUrl));
+		vscode.window.showInformationMessage('Opening Q-SYS Lua Extensions Documentation...');
+	});
+
+	context.subscriptions.push(openLuaExtensionsCommand);
+
 	// Register the completion provider for QSYS files
 	const completionProvider = vscode.languages.registerCompletionItemProvider(
 		luaDocSelector,

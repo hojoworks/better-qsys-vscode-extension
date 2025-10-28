@@ -31,12 +31,26 @@ export function createCommonValueCompletions(): vscode.CompletionItem[] {
 	classNameCompletion.detail = 'ClassName Property';
 	completions.push(classNameCompletion);
 
+	// Choices
+	const choicesCompletion = new vscode.CompletionItem('Choices', vscode.CompletionItemKind.Snippet);
+	choicesCompletion.insertText = new vscode.SnippetString('Choices = {${1:"Choice1"}, ${2:"Choice2"}, ${3:"Choice3"}}');
+	choicesCompletion.documentation = new vscode.MarkdownString('List of options for enum type properties or combo box controls');
+	choicesCompletion.detail = 'Choices Property';
+	completions.push(choicesCompletion);
+
 	// Color
 	const colorCompletion = new vscode.CompletionItem('Color', vscode.CompletionItemKind.Snippet);
 	colorCompletion.insertText = new vscode.SnippetString('Color = {${1:r}, ${2:g}, ${3:b}, ${4:alpha}}');
 	colorCompletion.documentation = new vscode.MarkdownString('Defines color of control');
 	colorCompletion.detail = 'Color Property';
 	completions.push(colorCompletion);
+
+	// Count
+	const countCompletion = new vscode.CompletionItem('Count', vscode.CompletionItemKind.Snippet);
+	countCompletion.insertText = new vscode.SnippetString('Count = ${1:count}');
+	countCompletion.documentation = new vscode.MarkdownString('Number of controls to create (for creating multiple similar controls)');
+	countCompletion.detail = 'Count Property';
+	completions.push(countCompletion);
 
 	// CornerRadius
 	const cornerRadiusCompletion = new vscode.CompletionItem('CornerRadius', vscode.CompletionItemKind.Snippet);
@@ -105,6 +119,13 @@ export function createCommonValueCompletions(): vscode.CompletionItem[] {
 	iconColorCompletion.detail = 'IconColor Property';
 	completions.push(iconColorCompletion);
 
+	// IconType
+	const iconTypeCompletion = new vscode.CompletionItem('IconType', vscode.CompletionItemKind.Snippet);
+	iconTypeCompletion.insertText = new vscode.SnippetString('IconType = "${1|Icon,Image,SVG|}"');
+	iconTypeCompletion.documentation = new vscode.MarkdownString('Format of Icon image. Icon = QDS icon, Image = PNG/JPG, SVG = SVG format');
+	iconTypeCompletion.detail = 'IconType Property';
+	completions.push(iconTypeCompletion);
+
 	// Image
 	const imageCompletion = new vscode.CompletionItem('Image', vscode.CompletionItemKind.Snippet);
 	imageCompletion.insertText = new vscode.SnippetString('Image = "${1:base64String}"');
@@ -140,12 +161,26 @@ export function createCommonValueCompletions(): vscode.CompletionItem[] {
 	marginCompletion.detail = 'Margin Property';
 	completions.push(marginCompletion);
 
+	// Max
+	const maxCompletion = new vscode.CompletionItem('Max', vscode.CompletionItemKind.Snippet);
+	maxCompletion.insertText = new vscode.SnippetString('Max = ${1:maxValue}');
+	maxCompletion.documentation = new vscode.MarkdownString('Maximum value for numeric properties and knob controls');
+	maxCompletion.detail = 'Max Property';
+	completions.push(maxCompletion);
+
 	// MeterStyle
 	const meterStyleCompletion = new vscode.CompletionItem('MeterStyle', vscode.CompletionItemKind.Snippet);
 	meterStyleCompletion.insertText = new vscode.SnippetString('MeterStyle = "${1|Level,Reduction,Gain,Standard|}"');
 	meterStyleCompletion.documentation = new vscode.MarkdownString('Style of meter display');
 	meterStyleCompletion.detail = 'MeterStyle Property';
 	completions.push(meterStyleCompletion);
+
+	// Min
+	const minCompletion = new vscode.CompletionItem('Min', vscode.CompletionItemKind.Snippet);
+	minCompletion.insertText = new vscode.SnippetString('Min = ${1:minValue}');
+	minCompletion.documentation = new vscode.MarkdownString('Minimum value for numeric properties and knob controls');
+	minCompletion.detail = 'Min Property';
+	completions.push(minCompletion);
 
 	// OffColor
 	const offColorCompletion = new vscode.CompletionItem('OffColor', vscode.CompletionItemKind.Snippet);

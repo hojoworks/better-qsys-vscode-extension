@@ -2,7 +2,7 @@
   "name": "qsys-intellisense",
   "displayName": "Better Lua for Q-SYS Plugins",
   "description": "IntelliSense and autocomplete support for QSYS Lua plugin development",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "integratorblocks",
   "icon": "images/qsyslogo256.png",
   "repository": {
@@ -20,6 +20,30 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "qsys-intellisense.openDocumentation",
+        "title": "Q-SYS: Open Reserved Functions Documentation"
+      },
+      {
+        "command": "qsys-intellisense.openLuaExtensions",
+        "title": "Q-SYS: Open Lua Extensions Documentation"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "qsys-intellisense.openDocumentation",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h",
+        "when": "editorLangId == lua"
+      },
+      {
+        "command": "qsys-intellisense.openLuaExtensions",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
+        "when": "editorLangId == lua"
+      }
+    ],
     "configurationDefaults": {
       "files.associations": {
         "*.qplug": "lua"
