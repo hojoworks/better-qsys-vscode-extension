@@ -23,61 +23,104 @@ Hover over Q-SYS-specific keywords to see helpful documentation including:
 
 ### Property Completions (5 types)
 
-Type `property` to see all options:
+Type `Property` to see all options:
 
-- `property string` - String property with Name, Type, Value
-- `property integer` - Integer property with Name, Type, Min, Max, Value
-- `property double` - Double property with Name, Type, Min, Max, Value
-- `property boolean` - Boolean property with Name, Type, Value
-- `property enum` - Enum property with Name, Type, Choices, Value
+- `Property string` - String property with Name, Type, Value
+- `Property integer` - Integer property with Name, Type, Min, Max, Value
+- `Property double` - Double property with Name, Type, Min, Max, Value
+- `Property boolean` - Boolean property with Name, Type, Value
+- `Property enum` - Enum property with Name, Type, Choices, Value
 
 All properties include optional commented Header and Comment fields.
 
 ### Control Completions (4 types)
 
-Type `control` to see all options:
+Type `Control` to see all options:
 
-- `control button` - Button control with ButtonType, Count, UserPin, PinStyle
-- `control indicator` - Indicator control with IndicatorType, Count, UserPin, PinStyle
-- `control knob` - Knob control with ControlUnit, Min, Max, Count, UserPin, PinStyle
-- `control text` - Text control with Count, UserPin, PinStyle
+- `Control Button` - Button control with ButtonType, Count, UserPin, PinStyle
+- `Control Indicator` - Indicator control with IndicatorType, Count, UserPin, PinStyle
+- `Control Knob` - Knob control with ControlUnit, Min, Max, Count, UserPin, PinStyle
+- `Control Text` - Text control with Count, UserPin, PinStyle
 
 ### Layout Completions (11 types)
 
-Type `layout` to see all options:
+Type `Layout` to see all options:
 
-- `layout button` - Button layout with PrettyName, Style, ButtonStyle, Position, Size
-- `layout combobox` - ComboBox layout
-- `layout fader` - Fader layout with ShowTextbox option
-- `layout general` - General layout template with Style dropdown
-- `layout knob` - Knob layout
-- `layout led` - LED layout
-- `layout listbox` - ListBox layout
-- `layout media` - Media layout
-- `layout meter` - Meter layout with MeterStyle options
-- `layout none` - None layout (hidden control)
-- `layout text` - Text layout
+- `Layout Button` - Button layout with PrettyName, Style, ButtonStyle, Position, Size
+- `Layout ComboBox` - ComboBox layout
+- `Layout Fader` - Fader layout with ShowTextbox option
+- `Layout General` - General layout template with Style dropdown
+- `Layout Knob` - Knob layout
+- `Layout Led` - LED layout
+- `Layout ListBox` - ListBox layout
+- `Layout Media` - Media layout
+- `Layout Meter` - Meter layout with MeterStyle options
+- `Layout None` - None layout (hidden control)
+- `Layout Text` - Text layout
 
 ### Graphics Completions (5 types)
 
-Type `graphics` to see all options:
+Type `Graphics` to see all options:
 
-- `graphics groupbox` - GroupBox graphic
-- `graphics header` - Header graphic
-- `graphics image` - Image graphic with base64 Image property
-- `graphics label` - Label graphic
-- `graphics svg` - SVG graphic with base64 Image property
+- `Graphics GroupBox` - GroupBox graphic
+- `Graphics Header` - Header graphic
+- `Graphics Image` - Image graphic with base64 Image property
+- `Graphics Label` - Label graphic
+- `Graphics Svg` - SVG graphic with base64 Image property
+
+### Pin Completions (1 type)
+
+Type `Pins Insert` to get pin definition completion:
+
+- `Pins Insert` - Pin definition with Name, Direction, and Domain properties for GetPins function
+
+Example usage:
+
+```lua
+function GetPins(props)
+  local pins = {}
+  table.insert(pins, {
+    Name = "Audio Output",
+    Direction = "output",
+    Domain = "audio"
+  })
+  return pins
+end
+```
+
+### Component Completions (1 type)
+
+Type `Components Insert` to get component definition completion:
+
+- `Components Insert` - Component definition with Name, Type, and Properties for GetComponents function
+
+Example usage:
+
+```lua
+function GetComponents(props)
+  local components = {}
+  table.insert(components, {
+    Name = "MainMixer",
+    Type = "mixer",
+    Properties = {
+      ["n_inputs"] = 8,
+      ["n_outputs"] = 1
+    }
+  })
+  return components
+end
+```
 
 ### Runtime Control Properties (6 completions)
 
-Type `runtime` to see all options for accessing controls at runtime:
+Type `Runtime` to see all options for accessing controls at runtime:
 
-- `runtime value` - Controls['controlName'].Value (Read/Write floating point)
-- `runtime string` - Controls['controlName'].String (Read/Write string representation)
-- `runtime boolean` - Controls['controlName'].Boolean (Read/Write boolean, true if position > 0.5)
-- `runtime position` - Controls['controlName'].Position (Read/Write position from 0.0 to 1.0)
-- `runtime eventhandler function` - Assign a function reference to EventHandler
-- `runtime eventhandler inline` - Assign an inline function to EventHandler
+- `Runtime value` - Controls['controlName'].Value (Read/Write floating point)
+- `Runtime string` - Controls['controlName'].String (Read/Write string representation)
+- `Runtime boolean` - Controls['controlName'].Boolean (Read/Write boolean, true if position > 0.5)
+- `Runtime position` - Controls['controlName'].Position (Read/Write position from 0.0 to 1.0)
+- `Runtime eventhandler function` - Assign a function reference to EventHandler
+- `Runtime eventhandler inline` - Assign an inline function to EventHandler
 
 Example usage:
 
@@ -151,10 +194,13 @@ Autocomplete for individual layout and graphics properties:
 
 1. Open a `.lua` or `.qplug` file
 2. Start typing one of the supported keywords:
-   - `property` - Shows all property types
-   - `control` - Shows all control types
-   - `layout` - Shows all layout types
-   - `graphics` - Shows all graphics types
+   - `Property` - Shows all property types
+   - `Control` - Shows all control types
+   - `Layout` - Shows all layout types
+   - `Graphics` - Shows all graphics types
+   - `Runtime` - Shows all runtime control properties
+   - `Pins Insert` - Pin definition for GetPins function
+   - `Components Insert` - Component definition for GetComponents function
    - Any property name (e.g., `Font`, `Color`, `Position`)
 3. Select from the autocomplete dropdown
 4. Use Tab to move through placeholders
@@ -186,7 +232,21 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Changelog
 
-### Version 1.2.0 (Current)
+### Version 1.3.0 (Current)
+
+#### Added
+
+- **Pin Completions** - Added new autocomplete support for GetPins function:
+  - `Pins Insert` - Pin definition completion with Name, Direction, and Domain properties
+  - Supports both audio (default) and serial pin types
+  - Tab navigation through all pin properties (Name → Direction → Domain)
+  - Comprehensive documentation for pin properties and usage
+- **Component Completions** - Added new autocomplete support for GetComponents function:
+  - `Components Insert` - Component definition completion with Name, Type, and Properties
+  - Tab navigation through component properties and nested Properties table
+  - Includes documentation about component limitations and design implications
+
+### Version 1.2.0
 
 #### Added
 
@@ -221,12 +281,12 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 #### Added
 
 - **Runtime Property Completions** - 6 new completions for runtime control access:
-  - `runtime value`, `runtime string`, `runtime boolean`, `runtime position`
-  - `runtime eventhandler function`, `runtime eventhandler inline`
+  - `Runtime value`, `Runtime string`, `Runtime boolean`, `Runtime position`
+  - `Runtime eventhandler function`, `Runtime eventhandler inline`
 
 #### Changed
 
-- **Consistent Naming** - Standardized all completion names to lowercase after prefix (e.g., `property string`, `control button`, `runtime value`)
+- **Consistent Naming** - Standardized all completion names with proper capitalization (e.g., `Property string`, `Control Button`, `Runtime value`)
 - **Runtime Syntax** - Updated to use `Controls['controlName']` bracket notation (Q-SYS standard)
 - **Text Control Enhancement** - Added `PinStyle` property to text control completions
 

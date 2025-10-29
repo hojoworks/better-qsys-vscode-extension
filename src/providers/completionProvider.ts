@@ -5,6 +5,8 @@ import { createLayoutCompletions } from '../completions/layouts';
 import { createGraphicsCompletions } from '../completions/graphics';
 import { createCommonValueCompletions } from '../completions/common';
 import { createRuntimeCompletions } from '../completions/runtime';
+import { createPinCompletions } from '../completions/pins';
+import { createComponentCompletions } from '../completions/components';
 
 export function provideCompletionItems(
 	document: vscode.TextDocument,
@@ -32,6 +34,12 @@ export function provideCompletionItems(
 
 	// Runtime Control Properties
 	completionItems.push(...createRuntimeCompletions());
+
+	// Pin Completions
+	completionItems.push(...createPinCompletions());
+
+	// Component Completions
+	completionItems.push(...createComponentCompletions());
 
 	return completionItems;
 }

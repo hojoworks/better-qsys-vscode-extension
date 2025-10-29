@@ -31,7 +31,7 @@ export function provideHover(
 		'IndicatorType': 'Indicator type: "Led", "Meter", "Status", or "Text"',
 		'ControlUnit': 'Unit of measurement: "dB", "Float", "Hz", "Integer", "Pan", "Percent", "Position", or "Seconds"',
 		'PinStyle': 'Pin visibility: "Input", "Output", "Both", or "None"',
-		'UserPin': 'Boolean - if true, pin is exposed on the plugin block',
+		'UserPin': 'Boolean - If true, pin will be available under "Control Pins" in the "Properties" pane of QDS. If false, pin is always shown in schematic.',
 		'Count': 'Number of controls to create (for creating multiple similar controls)',
 		'Icon': 'String - Icon name (e.g., "skull") or Base64-encoded image data for button graphics',
 		'IconType': 'String - Format of Icon image. Options: "Icon" (default), "Image" (PNG with alpha or JPG), "SVG"',
