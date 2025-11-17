@@ -24,6 +24,13 @@ export function createCommonValueCompletions(): vscode.CompletionItem[] {
 	buttonVisualStyleCompletion.detail = 'ButtonVisualStyle Property';
 	completions.push(buttonVisualStyleCompletion);
 
+	// ButtonType
+	const buttonTypeCompletion = new vscode.CompletionItem('ButtonType', vscode.CompletionItemKind.Snippet);
+	buttonTypeCompletion.insertText = new vscode.SnippetString('ButtonType = "${1|Toggle,Momentary,Trigger,StateTrigger|}"');
+	buttonTypeCompletion.documentation = new vscode.MarkdownString('Defines the control behavior of the button. Options: "Toggle", "Momentary", "Trigger", "StateTrigger"');
+	buttonTypeCompletion.detail = 'ButtonType Property';
+	completions.push(buttonTypeCompletion);
+
 	// ClassName
 	const classNameCompletion = new vscode.CompletionItem('ClassName', vscode.CompletionItemKind.Snippet);
 	classNameCompletion.insertText = new vscode.SnippetString('ClassName = "${1:className}"');

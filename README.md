@@ -232,7 +232,17 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Changelog
 
-### Version 1.3.0 (Current)
+### Version 1.3.1 (Current)
+
+#### Added
+
+- **ButtonType Completion** - Added single property completion for ButtonType with options: Toggle, Momentary, Trigger, StateTrigger
+
+#### Changed
+
+- **Layout Completion Capitalization** - Updated all layout completions to use proper capitalization, the default table in QSYS base plugin uses "layout" all lowercase.
+
+### Version 1.3.0
 
 #### Added
 
